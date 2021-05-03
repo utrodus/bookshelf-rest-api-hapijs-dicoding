@@ -3,6 +3,7 @@ const {
   getAllBooksHandler,
   getBookByIdHandler,
   editBookByIdHandler,
+  deleteBookByIdHandler
 } = require("./handler.js");
 const routes = [
   {
@@ -20,13 +21,16 @@ const routes = [
     path: "/books/{bookId}",
     handler: getBookByIdHandler,
   },
-  // TODO: create route for edit book
   {
     method: "PUT",
     path: "/books/{bookId}",
     handler: editBookByIdHandler,
   },
-  // TODO: create route for delete book
+  {
+    method: "DELETE",
+    path: "/books/{bookId}",
+    handler: deleteBookByIdHandler,
+  },
 ];
 
 module.exports = routes;

@@ -1,4 +1,6 @@
 # Bookshelf API with hapijs - Dicoding Submission
+**Author** : Utrodus Said Al Baqi
+
 
 ### Installation
 
@@ -24,4 +26,3 @@ Open  [http://127.0.0.1:5000](http://127.0.0.1:5000/)  to see it live there.
 ### Run ESLint 
 
 `npm run lint`
-

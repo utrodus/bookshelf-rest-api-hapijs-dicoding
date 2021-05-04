@@ -75,14 +75,67 @@ const addBookHandler = (request, h) => {
 };
 
 const getAllBooksHandler = (request, h) => {
-  const allBooks = [];
-  books.forEach((book) => {
-    allBooks.push({
-      id: book.id,
-      name: book.name,
-      publisher: book.publisher,
+  const { name, reading, finished } = request.query;
+  let allBooks = [];
+  let booksQueryResult;
+
+  if (name) {
+    booksQueryResult = books.filter((book) =>
+      book.name.toLowerCase().includes(name.toLowerCase())
+    );
+    booksQueryResult.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
     });
-  });
+  } else if (reading == 0) {
+    booksQueryResult = books.filter((book) => book.reading === false);
+    booksQueryResult.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
+    });
+  } else if (reading == 1) {
+    booksQueryResult = books.filter((book) => book.reading === true);
+
+    booksQueryResult.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
+    });
+  } else if (finished == 0) {
+    booksQueryResult = books.filter((book) => book.finished === false);
+    booksQueryResult.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
+    });
+  } else if (finished == 1) {
+    booksQueryResult = books.filter((book) => book.finished === true);
+    booksQueryResult.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
+    });
+  } else {
+    books.forEach((book) => {
+      allBooks.push({
+        id: book.id,
+        name: book.name,
+        publisher: book.publisher,
+      });
+    });
+  }
 
   const response = h.response({
     status: "success",

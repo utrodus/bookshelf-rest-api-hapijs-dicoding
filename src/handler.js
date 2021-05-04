@@ -18,6 +18,23 @@ const addBookHandler = (request, h) => {
   const insertedAt = new Date().toISOString();
   const updatedAt = insertedAt;
 
+  if (!name) {
+    const response = h.response({
+      status: "fail",
+      message: "Gagal menambahkan buku. Mohon isi nama buku",
+    });
+    response.code(400);
+    return response;
+  }
+  if (readPage > pageCount) {
+    const response = h.response({
+      status: "fail",
+      message:
+        "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount",
+    });
+    response.code(400);
+    return response;
+  }
   const newBook = {
     id,
     name,
@@ -34,25 +51,6 @@ const addBookHandler = (request, h) => {
   };
 
   books.push(newBook);
-
-  if (!name) {
-    const response = h.response({
-      status: "fail",
-      message: "Gagal menambahkan buku. Mohon isi nama buku",
-    });
-    response.code(400);
-    return response;
-  }
-
-  if (readPage > pageCount) {
-    const response = h.response({
-      status: "fail",
-      message:
-        "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount",
-    });
-    response.code(400);
-    return response;
-  }
 
   const isSuccess = books.filter((book) => book.id === id).length > 0;
   if (isSuccess) {
@@ -76,16 +74,30 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const getAllBooksHandler = () => ({
-  status: "success",
-  data: {
-    books: books,
-  },
-});
+const getAllBooksHandler = (request, h) => {
+  const allBooks = [];
+  books.forEach((book) => {
+    allBooks.push({
+      id: book.id,
+      name: book.name,
+      publisher: book.publisher,
+    });
+  });
+
+  const response = h.response({
+    status: "success",
+    data: {
+      books: allBooks,
+    },
+  });
+  response.code(200);
+  return response;
+};
 
 const getBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const book = books.filter((book) => book.id === bookId)[0];
+
   if (book !== undefined) {
     const response = h.response({
       status: "success",
@@ -167,7 +179,7 @@ const editBookByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "error",
+    status: "fail",
     message: "Gagal memperbarui buku. Id tidak ditemukan",
   });
   response.code(404);

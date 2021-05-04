@@ -19,7 +19,7 @@
 
 2. And Done, now you are ready to test rest api with postman
 	
-Open  [http://127.0.0.1:8000](http://127.0.0.1:5000/)  to see it live there.
+Open  [http://127.0.0.1:5000](http://127.0.0.1:5000/)  to see it live there.
 
 ### Run ESLint 
 

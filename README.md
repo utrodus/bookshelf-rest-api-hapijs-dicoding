@@ -1,6 +1,6 @@
 # Bookshelf API with hapijs - Dicoding Submission
 
-#### Installation
+### Installation
 
 1. Open up command prompt / terminal and navigate to the bookshelf-rest-api-hapijs-dicoding-main folder (where you have extracted the folder). E.g.
 
@@ -11,7 +11,7 @@
 		`npm install`
 
 
-#### Run project
+### Run project
 
 1. Run the following command to run project
 
@@ -23,5 +23,5 @@ Open  [http://127.0.0.1:8000](http://127.0.0.1:5000/)  to see it live there.
 
 ### Run ESLint 
 
-		`npm run lint`
+`npm run lint`
 

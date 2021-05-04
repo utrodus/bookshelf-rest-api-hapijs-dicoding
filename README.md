@@ -2,7 +2,7 @@
 
 #### Installation
 
-1. Open up command prompt and navigate to the bookshelf-rest-api-hapijs-dicoding folder (where you have extracted the folder). E.g.
+1. Open up command prompt / terminal and navigate to the bookshelf-rest-api-hapijs-dicoding folder (where you have extracted the folder). E.g.
 
 		`cd bookshelf-rest-api-hapijs-dicoding-main`
 

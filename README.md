@@ -1,5 +1,4 @@
 # Bookshelf API with hapijs - Dicoding Submission
-**Author** : Utrodus Said Al Baqi
 
 Built with Javascript, NodeJs, Web Component, Node Package Manager, HapiJS.
 

@@ -1,12 +1,12 @@
 # Bookshelf API with hapijs - Dicoding Submission
 **Author** : Utrodus Said Al Baqi
 
-Built with ES6, Web Component,Node Package Manager, JS.
+Built with Javascript, NodeJs, Web Component, Node Package Manager, HapiJS.
 
-Simple web App for finding food recipes made with VueJs and Bootstrap for submission Dicoding Front-end Developer
+Building Web Services using Node.js natively and through the Hapi framework, building a simple RESTful API.
 
-#### Final Submission from course [Learn Front-End Web Development Fundamentals](https://www.dicoding.com/academies/163).
-#### [My Certificate](https://www.dicoding.com/certificates/QGRX57M5RP0M) 
+#### Final Submission from course [Learn to Make Back-End Apps for Beginners](https://www.dicoding.com/academies/261).
+#### [My Certificate](https://www.dicoding.com/certificates/EYX4RENDOXDL) 
 
 ### Installation
 
@@ -42,4 +42,4 @@ Open  [http://127.0.0.1:5000](http://127.0.0.1:5000/)  to see it live there.
 
 ---
 
-###### tags: `Javascript` `NodeJs` `Backend` `HapiJs` `Dicoding Indonesia`
+###### tags: `Javascript` `Web service` `Backend` `Dicoding Indonesia`
